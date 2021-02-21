@@ -5,7 +5,36 @@
   background-color: $blue-magenta;
   padding: 40px;
 
-  .title {
-    color: $white;
+  .top-text {
+    @include font-style(
+      $size: 16px,
+      $color: $aquamarine,
+      $transform: uppercase,
+      $align: center,
+      $family: 'Nunito-Light',
+      $spacing: 11px
+    );
+    margin-top: 60px;
+  }
+
+  &_title {
+    @include font-style(
+      $size: 48px,
+      $color: $aquamarine,
+      $align: center,
+      $transform: uppercase,
+      $spacing: 6px,
+      $lineHeight: 48px
+    );
+    background: -webkit-linear-gradient(left, $light-viotel, $chetwode-blue);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 20px 0;
+  }
+
+  &_paragraph {
+    max-width: 460px;
+    @include font-style($size: 18px, $color: $aquamarine, $align: center, $lineHeight: 22px);
+    margin: auto;
   }
 }
