@@ -1,0 +1,11 @@
+@import 'assets/styles/variables.scss';
+@import 'assets/styles/mixins.scss';
+
+.button {
+  background-color: $blue-magenta;
+  color: $aquamarine;
+
+  &.vertical {
+    transform: rotate(-90deg);
+  }
+}
