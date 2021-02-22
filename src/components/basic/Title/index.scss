@@ -1,0 +1,6 @@
+@import 'assets/styles/variables.scss';
+@import 'assets/styles/mixins.scss';
+
+.title {
+  @include font-style($color: #0d0222, $family: 'Nunito-Regular');
+}

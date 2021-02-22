@@ -1,0 +1,7 @@
+@import 'assets/styles/variables.scss';
+@import 'assets/styles/mixins.scss';
+
+.paragraph {
+  @include font-style($family: 'Nunito-Regular', $size: 14px, $color: $blue-magenta);
+  margin: 20px 0;
+}
