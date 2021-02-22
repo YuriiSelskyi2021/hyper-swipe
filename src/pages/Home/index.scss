@@ -4,6 +4,8 @@
 .home {
   background-color: $blue-magenta;
   padding: 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
 
   .top-text {
     @include font-style(
@@ -15,6 +17,7 @@
       $spacing: 11px
     );
     margin-top: 60px;
+    margin-bottom: 12px;
   }
 
   &_title {
@@ -23,18 +26,42 @@
       $color: $aquamarine,
       $align: center,
       $transform: uppercase,
-      $spacing: 6px,
-      $lineHeight: 48px
+      $spacing: 3.7px,
+      $lineHeight: 48px,
+      $family: inherit,
+      $bold: 500
     );
     background: -webkit-linear-gradient(left, $light-viotel, $chetwode-blue);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0;
   }
 
   &_paragraph {
-    max-width: 460px;
+    max-width: 455px;
     @include font-style($size: 18px, $color: $aquamarine, $align: center, $lineHeight: 22px);
     margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 20px;
+    overflow: hidden;
+
+    .top-text {
+      @include font-style($size: 14px, $spacing: 9px);
+      margin-top: 20px;
+      margin-bottom: 7px;
+    }
+
+    &_title {
+      @include font-style($size: 44px, $spacing: 2px);
+      margin-bottom: 22px;
+    }
+
+    &_paragraph {
+      @include font-style($size: 14px, $spacing: 2px, $lineHeight: 16px);
+    }
   }
 }

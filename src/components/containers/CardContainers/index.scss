@@ -1,0 +1,117 @@
+@import 'assets/styles/variables.scss';
+@import 'assets/styles/mixins.scss';
+
+.cards {
+  @include flex($direction: column, $align: center);
+  padding: 25px;
+  margin-top: 73px;
+  position: relative;
+  height: 399px;
+
+  &_navigation {
+    @include flex($justify: space-between);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    padding: 0 165px;
+    box-sizing: border-box;
+
+    &-button {
+      @include font-style($size: 36px, $transform: uppercase, $spacing: 1px, $lineHeight: 34px);
+      width: 195px;
+      height: 260px;
+      padding: 1px;
+      border: 1px transparent;
+      border-radius: 8px;
+      background-image: linear-gradient($blue-magenta, $blue-magenta),
+        radial-gradient(circle at top left, $light-viotel, $chetwode-blue);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      line-height: 34px;
+      pointer-events: all;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .cards-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .swipe {
+      position: absolute;
+      z-index: 1;
+
+      .card {
+        &-title {
+          @include font-style(
+            $size: 28px,
+            $transform: uppercase,
+            $spacing: 1px,
+            $family: 'Nunito-Light',
+            $align: center
+          );
+          margin: 0;
+        }
+
+        &-paragraph {
+          @include font-style($size: 18px, $align: center, $spacing: 0.2px, $lineHeight: 22px);
+          margin-bottom: 23px;
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    padding: 0;
+    margin-top: 67px;
+    height: 340px;
+
+    &_navigation {
+      padding: 0;
+
+      &-button {
+        width: 200px;
+        height: 44px;
+        font-size: 18px;
+        transform: rotate(-90deg);
+        position: absolute;
+        top: -40px;
+
+        &.left {
+          left: -100px;
+        }
+
+        &.right {
+          right: -100px;
+        }
+      }
+    }
+
+    .card {
+      width: 240px;
+      height: 340px;
+
+      &_content {
+        padding: 24px 15px 5px 24px;
+      }
+
+      &-title {
+        @include font-style($size: 22px, $spacing: -1px);
+      }
+
+      &-paragraph {
+        @include font-style($size: 14px, $lineHeight: 16px);
+      }
+    }
+  }
+}

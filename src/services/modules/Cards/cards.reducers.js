@@ -19,10 +19,32 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        cards: action.payload.data,
+        cards: action.payload,
       };
     }
     case Action.GET_CARDS.FAILURE: {
+      return {
+        ...state,
+        loading: false,
+        error: action.error,
+      };
+    }
+
+    case Action.SWIPE_CARD.REQUEST: {
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    }
+    case Action.SWIPE_CARD.SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        cards: action.payload,
+      };
+    }
+    case Action.SWIPE_CARD.FAILURE: {
       return {
         ...state,
         loading: false,

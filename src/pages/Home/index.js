@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Paragraph, Title } from 'components';
+import { Paragraph, Title, CardContainers } from 'components';
 import { getCards } from 'services/index.actions';
 import './index.scss';
 
 const Home = () => {
   const dispatch = useDispatch();
   const cards = useSelector((state) => state.cards.cards);
-  console.log('cards', cards);
 
   useEffect(() => {
     dispatch(getCards.request());
@@ -22,9 +21,10 @@ const Home = () => {
         Hyper Swipe
       </Title>
       <Paragraph className="home_paragraph">
-        Swipe your way through these cards to give us an impession of who you are as a person. These
-        are some things we like and maybe you like them too?
+        These are some things we like and maybe you like them too? Swipe your way through the stack
+        and sort the pile into things you like and dislike.
       </Paragraph>
+      <CardContainers cards={cards} />
     </div>
   );
 };

@@ -33,5 +33,9 @@
       }
     ]
   },
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "globals": {
+    "localStorage": true,
+    "fetch": true
+  }
 }
